@@ -1,0 +1,35 @@
+@if (profile) {
+
+<div class="profile-card">
+    <div class="avatar-name">
+        <img src="/assets/imgs/avatar_batman.png" alt="avatar" class="profile-card__avatar">
+        <div class="profile-card__name">
+            <strong class="h6">{{profile.name}} </strong>
+            <span class="subtitle">{{profile.username}}</span>
+        </div>
+    </div>
+    <div class="profile-card__description"> {{profile.description}}
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero earum aliquam aliquid quas? Dignissimos non tempore cumque nemo eos! Corrupti.
+    </div>
+    <div class="profile-card__tags">
+        <div class="skill-tag">
+            angular
+        </div>
+        <div class="skill-tag">
+            HTML
+        </div>
+        <div class="skill-tag">
+            CSS
+        </div>
+        <div class="skill-tag">
+            REST
+        </div>
+        
+    </div>
+    <div class="profile-card__action-btns">
+        <button class="btn">
+            Subscribe
+        </button>
+    </div>
+</div>
+} 
