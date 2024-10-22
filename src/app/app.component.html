@@ -1,8 +1,2 @@
-<div class="profile-card__wrapper">
-    @for (profile of profiles; track profile.id) {
-        {{profile.id}}     {{profile.name}} 
-        <app-profile-card [profile] = "profile"
-        ></app-profile-card>
-    }    
-</div>
 
+<router-outlet></router-outlet>

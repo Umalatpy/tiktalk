@@ -1,9 +1,12 @@
 export interface Profile {
     id: number,
-    name: string,
     username: string,
-    description?: string,
-    email: string,
     avatarUrl: string | null,
-    stack: string[] | null
+    subscribersAmount: number,
+    firstName: string,
+    lastName: string,
+    isActive: boolean,
+    stack: string[] | null,
+    city: string,
+    description?: string,
 }
