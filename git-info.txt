@@ -18,4 +18,5 @@ git push --set-upstream "moja-vetka"
 git merge "moja-vetka" --no-ff
 
 username Umalat19
-login ZktNLJEV9Pgit commit
+login ZktNLJEV9P
+
