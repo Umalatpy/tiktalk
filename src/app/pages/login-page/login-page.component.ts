@@ -1,7 +1,6 @@
-import { Component, inject } from '@angular/core';
+import {Component, inject, signal} from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../auth/auth.service';
-import { from, map, take, skip, delay, tap } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,6 +12,8 @@ import { Router } from '@angular/router';
 export class LoginPageComponent {
   authService = inject(AuthService)
   router = inject(Router)
+  isPasswordVisible = signal<boolean>(false)
+
 
   form = new FormGroup({
     username: new FormControl<string | null>(null, Validators.required),
