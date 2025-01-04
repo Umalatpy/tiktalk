@@ -5,7 +5,7 @@ import {ImgUrlPipe} from '../../../helpers/pipes/img-url.pipe';
 @Component({
   selector: 'app-subscriber-card',
   imports: [
-    ImgUrlPipe
+    ImgUrlPipe,
   ],
   templateUrl: './subscriber-card.component.html',
   styleUrl: './subscriber-card.component.scss'
