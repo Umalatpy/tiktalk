@@ -12,7 +12,7 @@ export class ProfileService {
 
   baseApiUrl: string = 'https://icherniakov.ru/yt-course/'
 
-  me = signal<Profile | null>(null)
+  me = signal<Profile | null> (null)
 
   getTestAccounts() {
     return this.http.get<Profile[]>(`${this.baseApiUrl}account/test_accounts`)

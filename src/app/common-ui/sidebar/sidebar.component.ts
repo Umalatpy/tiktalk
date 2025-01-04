@@ -4,9 +4,10 @@ import {AsyncPipe, JsonPipe, NgForOf} from '@angular/common';
 import {SubscriberCardComponent} from './subscriber-card/subscriber-card.component';
 import {RouterLink} from '@angular/router';
 import {ProfileService} from '../../data/services/profile.service';
-import {Observable} from 'rxjs';
+import {firstValueFrom, Observable} from 'rxjs';
 import {Pageble} from '../../data/interfaces/pageble.interface';
 import {Profile} from '../../data/interfaces/profile.interface';
+import {ImgUrlPipe} from '../../helpers/pipes/img-url.pipe';
 
 @Component({
     selector: 'app-sidebar',
@@ -16,6 +17,7 @@ import {Profile} from '../../data/interfaces/profile.interface';
     SubscriberCardComponent,
     RouterLink,
     AsyncPipe,
+    ImgUrlPipe,
   ],
     templateUrl: './sidebar.component.html',
     styleUrl: './sidebar.component.scss'
@@ -43,4 +45,9 @@ export class SidebarComponent {
       link: 'search'
     }
   ]
+
+  ngOnInit() {
+    firstValueFrom(this.profileService.getMe())
+  }
+
 }
