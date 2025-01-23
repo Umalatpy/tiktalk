@@ -1,4 +1,4 @@
-import {Component, effect, inject} from '@angular/core';
+import {Component, effect, inject, ViewChild} from '@angular/core';
 import {ProfileHeaderComponent} from '../../common-ui/profile-header/profile-header.component';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {ProfileService} from '../../data/services/profile.service';
@@ -17,7 +17,10 @@ import {AvatarUploadComponent} from './avatar-upload/avatar-upload.component';
 })
 export class SettingsPageComponent {
   fb = inject(FormBuilder)
-  profileservice = inject(ProfileService)
+  profileService = inject(ProfileService)
+
+  @ViewChild(AvatarUploadComponent) avatarUploader!: AvatarUploadComponent
+
   form = this.fb.group({
     firstName: ['', Validators.required],
     lastName: ['', Validators.required],
@@ -28,13 +31,17 @@ export class SettingsPageComponent {
 
   constructor() {
     effect(() => {
-      // @ts-ignore
+
       this.form.patchValue({
-        ...this.profileservice.me(),
-        // @ts-ignore
-        stack: this.mergeStack(this.profileservice.me()?.stack)
+        ...this.profileService.me(),
+
+        stack: this.mergeStack(this.profileService.me()?.stack)
       })
     });
+  }
+
+  ngAfterViewInit() {
+
   }
 
   onSave() {
@@ -42,8 +49,12 @@ export class SettingsPageComponent {
     this.form.updateValueAndValidity()
 
     if (this.form.invalid) return
-    // @ts-ignore
-    firstValueFrom(this.profileservice.patchProfile({
+
+    if(this.avatarUploader.avatar) {
+      firstValueFrom(this.profileService.uploadAvatar(this.avatarUploader.avatar))
+    }
+    //@ts-ignore
+    firstValueFrom(this.profileService.patchProfile({
       ...this.form.value,
       stack: this.splitStack(this.form.value.stack)
     }))
