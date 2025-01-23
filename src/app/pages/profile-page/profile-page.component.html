@@ -11,7 +11,7 @@
   </header>
 
   <main class="profile-page__body" >
-    <div></div>
+    <app-post-feed></app-post-feed>
 
     <div>
       <h3 class="h6 mb16">Подписчики</h3>
@@ -25,9 +25,10 @@
         <a class="to-subscribers-search" [routerLink]="['/search']" >
         </a>
       </div>
+
       <h3 class="h6 mb16">Навыки</h3>
-      <div class="stack-wrapper">
-        @for (skill of ['profile.stack', '123','3333']; track skill ) {
+      <div class="stack-wrapper mb32">
+        @for (skill of profile.stack; track skill ) {
           <div class="skill-tag">{{skill}}</div>
         }
 
