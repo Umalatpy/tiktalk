@@ -1,0 +1,21 @@
+<img src="/assets/imgs/avatar-placeholder.png" alt="" class="avatar">
+
+<div
+  class="dropzone"
+  tabindex="0"
+  (keyup.enter)="fileDrop.click()"
+>
+
+  <div class="dropzone-content">
+    <svg icon="upload"></svg>
+    <span class="medium-text" >Перетащите изображение или Загрузите</span>
+
+  </div>
+
+  <input
+    tabindex="-1"
+    class="avatar-input"
+    type="file"
+    #fileDrop
+  >
+</div>
