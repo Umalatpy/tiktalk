@@ -28,20 +28,16 @@ export class AvatarUploadComponent {
 
   }
 
-  processFile(file: File | null | undefined ) {
-
+  processFile(file: File | null | undefined ) : void {
     if (!file || !file.type.match('image')) return
 
-    const reader = new FileReader()
+    const reader: FileReader = new FileReader()
 
     reader.onload = event => {
       this.preview.set(event.target?.result?.toString() ?? '')
     }
 
     reader.readAsDataURL(file)
-
     this.avatar = file
-
   }
-
 }

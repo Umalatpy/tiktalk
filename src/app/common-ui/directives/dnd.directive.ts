@@ -39,5 +39,4 @@ export class DndDirective {
     this.fileDropped.emit(event.dataTransfer?.files[0]);
 
   }
-
 }
