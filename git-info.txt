@@ -20,3 +20,6 @@ git merge "moja-vetka" --no-ff
 username Umalat19
 login ZktNLJEV9P
 
+shift - shift = быстрый поиск по файлам
+
+@HostListener потренироваться с клик ивентом
