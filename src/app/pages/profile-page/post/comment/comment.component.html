@@ -3,16 +3,20 @@
     class="size32"
   [avatarUrl]="comment.author.avatarUrl"
   ></app-avatar-circle>
-}
 
-<div class="comment-body">
-  <header class="comment-header">
-    <span class="medium-text" > {{ comment.author.username }} </span>
-    <span class="medium-text" >  {{ comment.createdAt | date : 'HH:mm dd.MM.YYYY' }} </span>
 
-  </header>
+  <div class="comment-body">
+    <header class="comment-header">
+      <span class="medium-text" >
+        {{ comment.author.username }}
+      </span>
+      <span class="medium-text" >
+        {{ comment.createdAt | date : 'HH:mm dd.MM.YYYY' }}
+      </span>
+    </header>
 
-  <div class="comment-text">
-  {{ comment.text }}
+    <div class="comment-text">
+    {{ comment.text }}
+    </div>
   </div>
-</div>
+}

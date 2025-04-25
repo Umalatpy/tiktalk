@@ -1,4 +1,4 @@
-import {Component, HostBinding, inject, input, Input, Renderer2} from '@angular/core';
+import {Component, HostBinding, inject, input, Renderer2} from '@angular/core';
 import {AvatarCircleComponent} from '../../../common-ui/avatar-circle/avatar-circle.component';
 import {ProfileService} from '../../../data/services/profile.service';
 import {NgIf} from '@angular/common';
@@ -42,18 +42,16 @@ export class PostInputComponent {
   }
 
   onCreatePost() {
-    if (!this.postText) return;
+    if (!this.postText) return
 
     if (this.isCommentInput()) {
-
-      firstValueFrom(this.postService.createComment({
+      firstValueFrom(this.postService.createComment( {
         text: this.postText,
         authorId: this.profile()!.id,
         postId: this.postId()
       })).then(() => {
         this.postText = ''
       })
-
       return;
     }
 
