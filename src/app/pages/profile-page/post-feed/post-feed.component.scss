@@ -1,5 +1,12 @@
+
+
 :host{
   display: grid;
   grid-gap: 16px;
+  overflow: hidden;
+  height: 100%;
+}
+.blockForHiddenScroll{
   overflow-y: scroll;
+  width: calc(100% + 20px);
 }
