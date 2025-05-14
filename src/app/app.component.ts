@@ -10,5 +10,5 @@ import { ProfileCardComponent } from './common-ui/profile-card/profile-card.comp
 })
 
 export class AppComponent {
-  
-} 
+
+}
