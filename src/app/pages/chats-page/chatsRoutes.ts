@@ -1,5 +1,5 @@
 import {Route} from '@angular/router';
-import {ChatsPageComponent} from './chats-page.component';
+import {ChatsPageComponent} from './chats.component';
 import {ChatsWorkspaceComponent} from './chats-workspace/chats-workspace.component';
 
 export const chatsRoutes : Route [] = [
@@ -8,7 +8,7 @@ export const chatsRoutes : Route [] = [
     component: ChatsPageComponent,
     children: [
       {
-        path: 'id',
+        path: ':id',
         component: ChatsWorkspaceComponent,
       }
     ]
