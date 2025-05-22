@@ -11,5 +11,9 @@
     [chat]="chat"
     [routerLink]="[chat.id]"
     routerLinkActive="active"
-  ></button>
+  >
+    <span class="date">
+      {{chat.message }}
+    </span>
+  </button>
 }

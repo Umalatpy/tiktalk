@@ -4,6 +4,9 @@
   color: var(--light-color);
   padding: 16px 20px;
   border-bottom: var(--light-border);
+  position: absolute;
+  top: 20px;
+  width: calc(100% - 730px);
 
 }
 .companion-wrapper{

@@ -6,8 +6,12 @@
 
   <div class="message-container">
     <strong class="medium-text mb8">{{ message.user?.firstName }} {{message.user?.lastName}} {{message.createdAt | date: 'HH:mm' }}</strong>
-    <div class="message-text medium-text">
-      {{message.text}}
+    <p class=" chatsDay medium-text">{{message.createdAt | date: 'dd' }}</p>
+    <div class="messageTextWrapper">
+      <div class="message-text medium-text">
+        {{message.text}}
+      </div>
     </div>
+
   </div>
 }
