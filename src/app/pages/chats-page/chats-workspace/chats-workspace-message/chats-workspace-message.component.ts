@@ -15,6 +15,7 @@ import {DatePipe} from '@angular/common';
 export class ChatsWorkspaceMessageComponent {
   message = input.required<Message>()
 
+
   @HostBinding('class.is-mine')
   get isMine() {
     return this.message().isMine
