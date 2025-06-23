@@ -35,19 +35,19 @@
       <app-avatar-upload></app-avatar-upload>
     </label>
 
-
     <label class="tt-form-label">
       <span class="tt-form-label__text">Навыки (стэк)</span>
       <input type="text" class="tt-form-input" formControlName="stack">
     </label>
+    <div
+    ><button [routerLink]="['/myCustomForms']" class="btn forms-btn" >Мои формы</button>
+    </div>
   </div>
 
   <div>
     <div>
       <button class="btn" (click)="onSave()" >Сохранить</button>
     </div>
-
   </div>
-
 
 </form>

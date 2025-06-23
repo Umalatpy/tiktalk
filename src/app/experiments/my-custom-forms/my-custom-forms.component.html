@@ -1,0 +1,61 @@
+<router-outlet></router-outlet>
+<form (ngSubmit)="onSubmit($event)" >
+
+  <input
+    class="tt-input "
+    type="text"
+    name = "user-name"
+    [ngModel]="person.name"
+    [ngModelOptions]="{
+    updateOn: 'submit',
+    }"
+    (ngModelChange)="onChange($event)"
+  >
+
+  <input
+    class="tt-input "
+    type="text"
+    name = "user-lastName"
+    required = "true"
+    [(ngModel)]="person.lastName"
+    #lastNameControl="ngModel"
+  >
+  @if (lastNameControl.hasError('required')) {
+    <span> This field is required! </span>
+
+  }
+
+  {{lastNameControl.value}}
+
+<!-- [ngModelOptions]="{
+    standalone: true,
+    }"
+    пример создания контрола внутри формы, который стоит отдельно от формы и не имеет имени,
+     которая должна была бы привязать этот контрол к этой форме -->
+  <input
+    class="tt-input "
+    type="text"
+    [(ngModel)]="hobby"
+    [ngModelOptions]="{
+    standalone: true,
+    }"
+  >
+
+  {{hobby}}
+
+  <div ngModelGroup = "address">
+    <input
+      class="tt-input "
+      type="text"
+      name = "user-street"
+      [(ngModel)]="person.address.street"
+    >
+  </div>
+
+  <div>
+    <pre>
+      {{person | json }}
+    </pre>
+  </div>
+  <button class="btn w250" type="submit" >Submit</button>
+</form>
