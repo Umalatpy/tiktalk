@@ -15,7 +15,6 @@ export class ProfileService {
   me = signal<Profile | null> (null)
   filteredProfiles = signal<Profile[]>([])
 
-
   getTestAccounts() {
     return this.http.get<Profile[]>(`${this.baseApiUrl}account/test_accounts`)
   }

@@ -1,0 +1,22 @@
+<div class="my-data-wrapper">
+</div>
+<div class="subs-wrapper">
+
+    @for (sub of subs; track sub.id) {
+
+      <div class="my-subs mb32">
+        {{sub.firstName }}
+        <img style="width: 30px; height: 30px" [src]="sub.avatarUrl | imgUrl"  [alt]="sub.firstName">
+      </div>
+
+      <div class="my-subs mb32">
+        {{sub.firstName }}
+        <img style="width: 30px; height: 30px; border-radius: 50%" [src]="sub.avatarUrl | imgUrl"  [alt]="sub.firstName">
+        <pre>
+          {{sub | json}}
+        </pre>
+        {{sub.stack.at(5 ) }}
+      </div>
+    }
+
+</div>

@@ -1,7 +1,7 @@
 @if (avatarUrl(); as avatarUrl) {
   @if (avatarUrl) {
-    <img [src]="avatarUrl | imgUrl" alt="">
+    <img [src]="avatarUrl | imgUrl" alt="image">
   } @else {
-    <img src="/assets/imgs/avatar-placeholder.png" alt="" height="113" width="112">
+    <img src="/assets/imgs/avatar-placeholder.png" alt="image" height="113" width="112">
   }
 }
