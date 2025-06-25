@@ -1,4 +1,4 @@
-import {Component, signal} from '@angular/core';
+import {Component, inject, signal} from '@angular/core';
 import {SvgIconComponent} from '../../../common-ui/svg-icon/svg-icon.component';
 import {DndDirective} from '../../../common-ui/directives/dnd.directive';
 import {FormsModule} from '@angular/forms';
@@ -23,9 +23,8 @@ export class AvatarUploadComponent {
     this.processFile(file)
   }
 
-  onFileDroped(file: File) {
+  onFileDropped(file: File) {
     this.processFile(file)
-
   }
 
   processFile(file: File | null | undefined ) : void {

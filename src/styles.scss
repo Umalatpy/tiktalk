@@ -7,8 +7,10 @@
     --primary-color: #ae7aff;
     --gray-color: #5f646d;
     --dark-hover-color: #161616;
+    --dark-active-color: #161616;
     --light-transparent-color: #FFFFFFBF;
-
+    --message-color: #404040;
+    --light-border: 1px solid var(--light-color)
 }
 
 *,
@@ -126,9 +128,9 @@ body{
     display: block;
 }
 .tt-input {
-    width: 100%;
+  display: block;
+  width: 100%;
     margin-top: 8px;
-    display: block;
     border: 1px solid var(--light-color);
     border-radius: 4px;
     padding: 12px 20px;
@@ -176,4 +178,7 @@ body{
 
 .login-form {
     margin: 0 5% 0 0;
+}
+.w250 {
+  width: 250px;
 }

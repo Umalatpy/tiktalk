@@ -7,7 +7,7 @@ import { Pipe } from '@angular/core';
 export class ImgUrlPipe  {
 
   transform(value: string | null): string | null {
-    if (!value) {return null;}
+    if (!value) {return null}
     return `https://icherniakov.ru/yt-course/${value}`;
   }
 

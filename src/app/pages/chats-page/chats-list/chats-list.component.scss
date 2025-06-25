@@ -1,0 +1,11 @@
+:host{
+  display: flex;
+  flex-direction: column;
+  border-right: var(--light-border);
+  overflow-x: hidden;
+}
+
+.chats-filters-input__wrapper{
+  padding: 16px 20px;
+  border-bottom: var(--light-border);
+}
