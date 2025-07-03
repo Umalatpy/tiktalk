@@ -26,6 +26,7 @@ export const routes: Routes = [
         },
         {path: 'experiments', component: MyExperimentsComponent},
         {path: 'experiments/reactive-form', component: ReactiveFormComponent},
+        {path: 'experiments/custom-form', component: ReactiveFormComponent},
       ],
     canActivate: [canActivateAuth]
     },
