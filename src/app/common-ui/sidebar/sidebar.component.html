@@ -35,6 +35,13 @@
   >Все подписчики</a>
   <svg icon="arrow" class="to-subscribers-icon"></svg>
 </div>
+<div class="mt20">
+  <a class="menu-item btn" [routerLink]="['/experiments']">
+    Эксперименты
+  </a>
+</div>
+
+
 <footer class="sidebar__footer">
   @if (me(); as me) {
     @if (me.avatarUrl) {
