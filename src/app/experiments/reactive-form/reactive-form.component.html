@@ -1,2 +1,17 @@
 <router-outlet></router-outlet>
-<p>reactive-form works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit($event)" >
+  <label class="tt-control-label mb16" >
+    Name
+    <input
+      class="tt-form-input"
+      type="text"
+      placeholder="Enter your name"
+    >
+  </label>
+
+
+  <button type="submit" class="btn w250 ">
+    Submit
+  </button>
+
+</form>
