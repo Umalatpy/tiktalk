@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, NgForm} from '@angular/forms';
 import {JsonPipe} from '@angular/common';
+import {NoReactValidator} from './no-react.validator';
 
 @Component({
   selector: 'app-my-custom-forms',
   imports: [
     RouterOutlet,
     FormsModule,
-    JsonPipe
+    JsonPipe,
+    NoReactValidator
   ],
   templateUrl: './my-custom-forms.component.html',
   styleUrl: './my-custom-forms.component.scss'
@@ -31,9 +33,12 @@ export class MyCustomFormsComponent {
 
   }
 
-  onSubmit(event: SubmitEvent) {
-    console.log(event.target)
-    //@ts-ignore
-    console.log(window.ng.getDirectives(event.target)[2].value)
+  onSubmit(form: NgForm) {
+    console.log(form)
+    console.log(form.value)
+    // //@ts-ignore
+    // console.log(window.ng.getDirectives(event.target)[2].value)
   }
+
+  protected readonly NgForm = NgForm;
 }
