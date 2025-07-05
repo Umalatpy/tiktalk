@@ -3,24 +3,5 @@ import {AbstractControl, NG_VALIDATORS, ValidationErrors, Validator} from '@angu
 
 @Directive({
   standalone: true,
-  selector: '[noReact]',
-  providers: [{
-    provide: NG_VALIDATORS,
-    useExisting: NoReactValidator,
-    multi: true
-  }]
-
-})
-export class NoReactValidator implements Validator{
-  change!: () => void
-  validate(control: AbstractControl): ValidationErrors | null {
-    console.log(control.value)
-    return control.value?.toLowerCase() === 'react'
-      ? {noReact: {message: 'NO REACT !!!'}}
-      : null ;
-  }
-  registerOnValidatorChange(fn: () => void) {
-    this.change = fn
-  }
 
 }

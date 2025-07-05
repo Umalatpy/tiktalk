@@ -35,7 +35,9 @@ export class MyCustomFormsComponent {
 
   onSubmit(form: NgForm) {
     console.log(form)
-    //@ts-ignore
+
     // console.log(window.ng.getDirectives(event.target)[2].value)
   }
+
+  protected readonly NgForm = NgForm;
 }
