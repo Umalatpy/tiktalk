@@ -35,8 +35,7 @@ export class MyCustomFormsComponent {
 
   onSubmit(form: NgForm) {
     console.log(form)
-    console.log(form.value)
-    // //@ts-ignore
+
     // console.log(window.ng.getDirectives(event.target)[2].value)
   }
 

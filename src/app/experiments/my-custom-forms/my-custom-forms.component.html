@@ -1,7 +1,7 @@
 <router-outlet></router-outlet>
 <form
   #form = "ngForm"
-  (ngSubmit)="onSubmit(form)">
+
 
   <input
     class="tt-input "
@@ -26,12 +26,7 @@
     type="text"
     name = "user-lastName"
     required = "true"
-    NoReact
-    [(ngModel)]="person.lastName"
-    #lastNameControl="ngModel"
-  >
-  @if (lastNameControl.hasError('noReact')) {
-    <span> {{ lastNameControl.getError('noReact').message}} </span>
+
   }
 
   <br>
@@ -43,17 +38,9 @@
     standalone: true,
     }"
     пример создания контрола внутри формы, который стоит отдельно от формы и не имеет имени,
-     которая должна была бы привязать этот контрол к этой форме
-  <input
-    class="tt-input "
-    type="text"
-    [(ngModel)]="hobby"
-    [ngModelOptions]="{
-    standalone: true,
-    }"
-  >
 
-  {{hobby}}
+
+<!--  {{hobby}}-->
 
 -->
   <div ngModelGroup = "address">
